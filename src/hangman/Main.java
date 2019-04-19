@@ -23,6 +23,9 @@ public class Main {
 			wordToGuessLetters.add(c);
 		}
 		ArrayList<Character> wordToGuessLettersButItsBlank = new ArrayList<Character>();
+		for(int i = 0; i < wordToGuessLetters.size(); i++) {
+			wordToGuessLettersButItsBlank.add('_');
+		}
 		System.out.println(" _    _                                         \r\n" + 
 				"| |  | |                                        \r\n" + 
 				"| |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __  \r\n" + 
@@ -38,7 +41,7 @@ public class Main {
 		for(int i = 0; i < wordToGuess.length(); i++) {
 			System.out.print("_ ");
 		}
-		int guessesLeft = 10;
+		int guessesLeft = 30;
 		while(guessesLeft > 0) {
 			System.out.println("Type a guess letter. One character only.");
 			Scanner scan = new Scanner(System.in);
@@ -48,10 +51,20 @@ public class Main {
 			}
 			else {
 			}
-			for(int i = 0; i > wordToGuessLettersButItsBlank.size(); i++) {
-				System.out.print(wordToGuessLettersButItsBlank.get(i));
+			for(int i = 0; i < wordToGuessLettersButItsBlank.size(); i++) {
+				System.out.print(wordToGuessLettersButItsBlank.get(i) + " ");
 			}
 			guessesLeft--;
+			if(!wordToGuessLettersButItsBlank.contains('_')) {
+				break;
+			}
+		}
+		if(wordToGuessLettersButItsBlank.contains('_')) {
+			System.out.println("You ran out of guesses. literally how lol");
+		}
+		else {
+			System.out.println("You won! the word was " + wordToGuess);
+					
 		}
 	}
 }
