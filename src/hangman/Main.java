@@ -5,8 +5,8 @@ public class Main {
 //Hangman game
 	public static void main(String[] args) {
 		String word1 = "violin";
-		String word2 = "urmom";
-		String word3 = "gamers";
+		String word2 = "thisstringcontainsmanychars";
+		String word3 = "epicgamers";
 		String wordToGuess = "";
 		Scanner scan1 = new Scanner(System.in);
 		System.out.println("Please type in the word you wish to play for, or type \"random\" to have the game pick for you.");
